@@ -8,4 +8,6 @@ l = ssh_status.split("\n")
 for i in l:
     if 'Active:' in i:
         print(i)
-        testing123
+    else:
+        if 'Failed:' in i:
+            print(i)

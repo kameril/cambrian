@@ -10,3 +10,13 @@ p = subprocess.Popen([systemctl","status","sshd"], stdout=subprocess.PIPE)
 (out2, err) = p.communicate()
                       if ('sshd' in str(out1)):
                       print(out2)
+                      else:
+                      print('sshd is inactive or failed.')
+
+# if slurmd is found in out1 then print it's status
+p = subprocess.Popen([systemctl","status","slurmd"], stdout=subprocess.PIPE)
+(out2, err) = p.communicate()
+                      if ('slurmd' in str(out1)):
+                      print(out2)
+                      else:
+                      print('slurmd is inactive or failed.')

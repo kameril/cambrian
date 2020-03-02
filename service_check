@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-from subprocess import check_output
+from subprocess
 
-ssh_status = check_output('systemctl status sshd',shell=True,universal_newlines=True)
-
-l = ssh_status.split("\n")
-
-for i in l:
-    if 'Active:' in i:
-        print(i)
-    else:
-        if 'Failed:' in i:
-            print(i)
+# checking active services and running 'if' statements against it for each service
+p = subprocess.Popen([systemctl","list-units","--all","--state=active"], stdout=subprocess.PIPE)
+(out1, err) = p.communicate()
+                
+# if sshd is found in out1 then print it's status
+p = subprocess.Popen([systemctl","status","sshd"], stdout=subprocess.PIPE)
+(out1, err) = p.communicate()
+                      if ('sshd' in str(out1)):
+                      print(out2)

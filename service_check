@@ -7,6 +7,6 @@ p = subprocess.Popen([systemctl","list-units","--all","--state=active"], stdout=
                 
 # if sshd is found in out1 then print it's status
 p = subprocess.Popen([systemctl","status","sshd"], stdout=subprocess.PIPE)
-(out1, err) = p.communicate()
+(out2, err) = p.communicate()
                       if ('sshd' in str(out1)):
                       print(out2)
